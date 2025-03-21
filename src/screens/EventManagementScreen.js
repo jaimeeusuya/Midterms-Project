@@ -4,6 +4,8 @@ import { DataTable, Button } from "react-native-paper";
 import { Icons } from '../assets/components/icons';
 import { useNavigation } from '@react-navigation/native';
 
+import { events as initialEvents } from '../data/eventsData';
+
 import {style} from '../styles/EventManagementStyle';
 
 
@@ -16,11 +18,7 @@ const EventManagementScreen = () => {
     };
 
     // Sample Event Data
-    const [events, setEvents] = useState([
-        { id: 1, name: "National Gymnastics Meet", date: "2025-06-15" },
-        { id: 2, name: "Regional Qualifiers", date: "2025-07-10" },
-        { id: 3, name: "Training Camp", date: "2025-08-05" },
-    ]);
+    const [events, setEvents] = useState(initialEvents);
 
     const handleEdit = (id) => {
         Alert.alert("Edit Event", `Editing event with ID: ${id}`);
@@ -47,6 +45,14 @@ const EventManagementScreen = () => {
                         <Text style={style.headerTitle}>Event Management</Text>
         
                         <View style={style.spacer} /> {/* For spacing balance */}
+                    </View>
+
+                    <View style={style.backContainer}>
+                        <TouchableOpacity onPress={() => navigation.goBack()} style={style.backButton}>
+                            <Icons.back />
+                        </TouchableOpacity>
+                    
+                        <Text style={style.backButtonText}> Event Management Overview </Text>
                     </View>
                         
                     <View style={style.content}>

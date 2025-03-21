@@ -29,10 +29,12 @@ export const style = StyleSheet.create({
     content: {
         flex: 1,
         padding: 10,
+        marginTop: 30,
     },
 
     tableHeader: {
-        backgroundColor: "#d3d3d3",
+        paddingVertical: 8,
+        borderRadius: 5,
     },
 
     actionButtons: {
@@ -40,7 +42,7 @@ export const style = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         gap: 1, // Spacing between buttons
-        width: 100, // Ensures proper spacing
+        width: 60, // Ensures proper spacing
     },
 
     iconButton: {
@@ -49,13 +51,35 @@ export const style = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 1,
+        width: 35,
     },
 
     viewButton: {
-        backgroundColor: "#007BFF", // Blue for View
+        backgroundColor: "#007BFF",
     },
 
     deleteButton: {
-        backgroundColor: "#D32F2F", // Red for Delete
+        backgroundColor: "#D32F2F",
+    },
+
+    backContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 10, 
+        position: "absolute",
+        top: 60,
+        left: 0,
+        zIndex: 10, 
+        padding: 10,
+    },
+
+    backButton: {
+        marginRight: 3,
+    },
+
+    backButtonText: {
+        fontSize: 18, 
+        fontWeight: "bold",
+        color: "#114EA2",
     },
 });

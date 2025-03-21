@@ -29,10 +29,12 @@ export const style = StyleSheet.create({
     content: {
         flex: 1,
         padding: 10,
+        marginTop: 30,
     },
 
     tableHeader: {
-        backgroundColor: "#d3d3d3",
+        paddingVertical: 8,
+        borderRadius: 5,
     },
 
     tableRow: {
@@ -66,5 +68,26 @@ export const style = StyleSheet.create({
 
     deleteButton: {
         backgroundColor: "#D32F2F", // Red for Delete
+    },
+
+    backContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 10, 
+        position: "absolute",
+        top: 60,
+        left: 0,
+        zIndex: 10, 
+        padding: 10,
+    },
+
+    backButton: {
+        marginRight: 3,
+    },
+
+    backButtonText: {
+        fontSize: 18, 
+        fontWeight: "bold",
+        color: "#114EA2",
     },
 });

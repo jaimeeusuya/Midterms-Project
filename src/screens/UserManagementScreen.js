@@ -4,6 +4,8 @@ import { DataTable, Button } from "react-native-paper";
 import { Icons } from '../assets/components/icons';
 import { useNavigation } from '@react-navigation/native';
 
+import { users as initialUsers } from "../data/usersData";
+
 import {style} from '../styles/UserManagementStyle';
 
 
@@ -15,12 +17,7 @@ const UserManagementScreen = () => {
         navigation.toggleDrawer();
     };
 
-    // Sample User Data 
-    const [users, setUsers] = useState([
-        { id: 1, name: "John Doe", role: "Admin" },
-        { id: 2, name: "Jane Smith", role: "Member" },
-        { id: 3, name: "Michael Johnson", role: "Coach" },
-    ]);
+    const [users, setUsers] = useState( initialUsers );
 
     const handleEdit = (id) => {
         Alert.alert("Edit User", `Editing user with ID: ${id}`);
@@ -51,8 +48,16 @@ const UserManagementScreen = () => {
                 <View style={style.spacer} /> {/* For spacing balance */}
             </View>
 
+            <View style={style.backContainer}>
+                <TouchableOpacity onPress={() => navigation.goBack()} style={style.backButton}>
+                    <Icons.back />
+                </TouchableOpacity>
+
+                <Text style={style.backButtonText}> User Management Overview </Text>
+            </View>
+
             <View style={style.content}>
-            <DataTable>
+                <DataTable>
                     {/* Table Header */}
                     <DataTable.Header>
                         <DataTable.Title>Name</DataTable.Title>

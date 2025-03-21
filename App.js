@@ -13,8 +13,11 @@ import { drawerStyles } from './src/styles/DrawerStyle';
 import LoginScreen from './src/screens/LoginScreen';
 import LandingScreen from './src/screens/LandingScreen';
 import UserManagementScreen from './src/screens/UserManagementScreen';
+import UserManagementOverviewScreen from './src/screens/UserManagementOverviewScreen';
 import EventManagementScreen from './src/screens/EventManagementScreen';
+import EventManagementOverviewScreen from './src/screens/EventManagementOverviewScreen';
 import PaymentManagementScreen from './src/screens/PaymentManagementScreen';
+import PaymentManagementOverviewScreen from './src/screens/PaymentManagementOverviewScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -78,7 +81,7 @@ const DrawerNavigator = () => {
             />
 
             <Drawer.Screen name="UserManagement" 
-                component={UserManagementScreen}
+                component={UserManagementOverviewScreen}
                 options={{
                     drawerLabel: 'User Management',
                     drawerIcon: () => (
@@ -88,7 +91,7 @@ const DrawerNavigator = () => {
             />
 
             <Drawer.Screen name="EventManagement" 
-                component={EventManagementScreen}
+                component={EventManagementOverviewScreen}
                 options={{
                     drawerLabel: 'Event Management',
                     drawerIcon: () => (
@@ -98,7 +101,7 @@ const DrawerNavigator = () => {
             />
 
             <Drawer.Screen name="PaymentManagement" 
-                component={PaymentManagementScreen}
+                component={PaymentManagementOverviewScreen}
                 options={{
                     drawerLabel: 'Payment Management',
                     drawerIcon: () => (
@@ -126,8 +129,11 @@ const App = () => {
                     <Stack.Screen name="LoginScreen" component={LoginScreen} />
                     <Stack.Screen name="LandingScreen" component={LandingScreen} />
                     <Stack.Screen name="UserManagementScreen" component={UserManagementScreen} />
+                    <Stack.Screen name="UserManagementOverviewScreen" component={UserManagementOverviewScreen} />
                     <Stack.Screen name="EventManagementScreen" component={EventManagementScreen} />
+                    <Stack.Screen name="EventManagementOverviewScreen" component={EventManagementOverviewScreen} />
                     <Stack.Screen name="PaymentManagementScreen" component={PaymentManagementScreen} />
+                    <Stack.Screen name="PaymentManagementOverviewScreen" component={PaymentManagementOverviewScreen} />
                     <Stack.Screen name="MainDrawer" component={DrawerNavigator} />
                     
                 </Stack.Navigator>
